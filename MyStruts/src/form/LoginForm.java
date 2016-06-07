@@ -1,5 +1,5 @@
 
-package login;
+package form;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,6 +37,8 @@ public class LoginForm extends org.apache.struts.action.ActionForm {
      * @param request The HTTP Request we are processing.
      * @return
      */
+    
+    //when you use validation.xml and validator-rules.xml, this method need commented
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (userName == null || userName.length() < 1) {

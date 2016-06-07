@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
+<!-- Don't work. You need turn on plug-in in struts-config.xml -->
 <!DOCTYPE form-validation PUBLIC
           "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
           "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
@@ -22,18 +22,83 @@
     </global>
 
     <formset>
+    
+    
+    <form name="loginForm">
+   
+ <field property="userName"
+ depends="required,mask,maxLength,minLength">
 
-        <!-- An example form -->
-        <form name="logonForm">
+ <msg name="required" key="reg.error.userid.missing" />
+ <msg name="mask" key="reg.error.userid.alphanum"/>
+ <msg name="minLength" key="reg.error.userid.length" />
+ <msg name="maxLength" key="reg.error.userid.length" />
+ <arg name="minLength" key="${var:minlength}" position="0" resource="false"/>
+ <arg name="minLength" key="${var:maxlength}" position="1" resource="false"/>
+
+ <arg name="maxLength" key="${var:minlength}" position="0" resource="false"/>
+ <arg name="maxLength" key="${var:maxlength}" position="1" resource="false"/>
+
+ <var>
+ <var-name>mask</var-name>
+ <var-value>^[a-zA-Z0-9]*$</var-value>
+ </var>
+ <var>
+ <var-name>minlength</var-name>
+ <var-value>4</var-value>
+ </var>
+ <var>
+ <var-name>maxlength</var-name>
+ <var-value>10</var-value>
+ </var>
+ </field>
+
+ <field property="password"
+ depends="required,mask,maxLength,minLength">
+
+<msg name="required" key="reg.error.userid.missing" />
+ <msg name="mask" key="reg.error.userid.alphanum"/>
+ <msg name="minLength" key="reg.error.userid.length" />
+ <msg name="maxLength" key="reg.error.userid.length" />
+ <arg name="minLength" key="${var:minlength}" position="0" resource="false"/>
+ <arg name="minLength" key="${var:maxlength}" position="1" resource="false"/>
+
+ <arg name="maxLength" key="${var:minlength}" position="0" resource="false"/>
+ <arg name="maxLength" key="${var:maxlength}" position="1" resource="false"/>
+
+ <var>
+ <var-name>mask</var-name>
+ <var-value>^[a-zA-Z0-9]*$</var-value>
+ </var>
+ <var>
+ <var-name>minlength</var-name>
+ <var-value>4</var-value>
+ </var>
+ <var>
+ <var-name>maxlength</var-name>
+ <var-value>10</var-value>
+ </var>
+
+ </field>
+
+
+ </form> 
+    
+    
+      <!--  
+
+         An example form 
+        
+        <form name="loginForm">
             <field
-                property="username"
+                property="userName"
                 depends="required">
-                    <arg key="logonForm.username"/>
+                    <arg key="loginForm.userName"/>
             </field>
             <field
                 property="password"
                 depends="required,mask">
-                    <arg key="logonForm.password"/>
+                    <arg key="loginForm.password"/>
                     <var>
                         <var-name>mask</var-name>
                         <var-value>^[0-9a-zA-Z]*$</var-value>
@@ -43,32 +108,29 @@
 
     </formset>
 
-    <!-- An example formset for another locale -->
-    <formset language="fr">
+     An example formset for another locale -->
+  <!--   <formset language="en">
 
-        <constant>
-            <constant-name>postalCode</constant-name>
-            <constant-value>^[0-9a-zA-Z]*$</constant-value>
-        </constant>
+        
 
-        <!-- An example form -->
-        <form name="logonForm">
+       
+        <form name="loginForm">
             <field
-                property="username"
+                property="userName"
                 depends="required">
-                    <arg key="logonForm.username"/>
+                    <arg key="loginForm.userName"/>
             </field>
             <field
                 property="password"
                 depends="required,mask">
-                    <arg key="logonForm.password"/>
+                    <arg key="loginForm.password"/>
                     <var>
                         <var-name>mask</var-name>
                         <var-value>^[0-9a-zA-Z]*$</var-value>
                     </var>
             </field>
         </form>
-
+-->
    </formset>
 
 </form-validation>

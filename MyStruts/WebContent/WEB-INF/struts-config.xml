@@ -6,12 +6,12 @@
 
 <struts-config>
 	<form-beans>
-		<form-bean name="loginForm" type="login.LoginForm" />
+		<form-bean name="loginForm" type="form.LoginForm" />
 		<form-bean name="fareForm" type="form.FareForm" />
 		<form-bean name="exitForm" type="form.ExitForm" />	
 	</form-beans>	
 	<action-mappings>
-		<action name="loginForm" path="/Login" type="login.LoginAction"
+		<action name="loginForm" path="/Login" type="action.LoginAction"
 			scope="request" input="/login.jsp">
 			<forward name="failure" path="/login.jsp" redirect="true" />
 			<forward name="success" path="/elements/reservationPage.jsp"
@@ -34,6 +34,13 @@
 			<forward name="success" path="/elements/reservationPage.jsp" />
 		</action>
 	</action-mappings>
+	
 	<message-resources parameter="resource" />
+	<!-- Validator
+	<plug-in className="org.apache.struts.validator.ValidatorPlugin"> 
+		<set-property property="pathnames" 
+		value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml"/> 
+</plug-in>
+	 -->
 </struts-config>
  
