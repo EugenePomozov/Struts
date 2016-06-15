@@ -27,7 +27,7 @@
 		<caption><bean:message key="jsp.reservation.components"/></caption>
 		<thead>
 			<tr>
-				<th><bean:message key="jsp.reservation.sequence"/></th>
+				 <th><bean:message key="jsp.reservation.sequence"/></th>
 				<th><bean:message key="jsp.reservation.typeCode"/></th>
 				<th><bean:message key="jsp.reservation.dtCreation"/></th>
 				<th><bean:message key="jsp.reservation.status"/></th>

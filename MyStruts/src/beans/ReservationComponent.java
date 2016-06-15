@@ -4,18 +4,28 @@ public class ReservationComponent {
 	        private String componentTypeCode;
 	        private String createDateTime;
 	        private String internalStatus;
+	        private String sequence;
 
 	        public ReservationComponent() {
 	        }
 
 	        public ReservationComponent(String componentTypeCode, String createDateTime,
-	                                    String internalStatus) {
+	                                    String internalStatus, String sequence) {
 	            this.componentTypeCode = componentTypeCode;
 	            this.createDateTime = createDateTime;
 	            this.internalStatus = internalStatus;
+	            this.sequence = sequence;
 	        }
 
-	        public String getComponentTypeCode() {
+	        public String getSequence() {
+				return sequence;
+			}
+
+			public void setSequence(String sequence) {
+				this.sequence = sequence;
+			}
+
+			public String getComponentTypeCode() {
 	            return componentTypeCode;
 	        }
 
@@ -45,6 +55,7 @@ public class ReservationComponent {
 	                    "componentTypeCode='" + componentTypeCode + '\'' +
 	                    ", createDateTime=" + createDateTime +
 	                    ", internalStatus=" + internalStatus +
+	                    ", sequence=" + sequence +
 	                    '}';
 	        }
 	    }

@@ -36,11 +36,12 @@ public class Handler  extends DefaultHandler {
 				reservation = new Reservation(attrs.getValue(CODE_IDX),
 						attrs.getValue(DESCRIPTION_IDX), reservationComponents);
 				break;
-			case RESERVATIONCOMPONENT:
+			case RESCOMPONENT:
 				reservationComponents.add(new ReservationComponent(attrs
 						.getValue("ComponentTypeCode"), attrs
 						.getValue("CreateDateTime"), attrs
-						.getValue("InternalStatus")));
+						.getValue("InternalStatus"), attrs
+						.getValue("Sequence")));
 				break;
 			case CUSTOMER:
 				customer = new Customer(attrs.getValue("CustomerDocID"),
@@ -82,7 +83,7 @@ public class Handler  extends DefaultHandler {
 	}
 
 	private static enum DataEnum {
-		RESERVATION, RESERVATIONCOMPONENT, CUSTOMER, FAREFAMILY, ANCILLARYAIRCOMPONENT, EMAIL, PHONE, PAYMENT;
+		RESERVATION, RESCOMPONENT, CUSTOMER, FAREFAMILY, ANCILLARYAIRCOMPONENT, EMAIL, PHONE, PAYMENT;
 
 		private static List<String> names = null;
 
