@@ -12,8 +12,18 @@ import beans.User;
 public class ReservationCodeTag extends TagSupport {
 	private static final long serialVersionUID = 1L;
 
+	private String source;	//user
+	
+	
+	
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+
+
 	public int doStartTag() throws JspException {
-		User user=(User)pageContext.getAttribute("user",PageContext.SESSION_SCOPE);
+		User user=(User)pageContext.getAttribute(source,PageContext.SESSION_SCOPE);
 		try {
 			pageContext.getOut().print(user.getReservation().getCode());
 		} catch (IOException e) {

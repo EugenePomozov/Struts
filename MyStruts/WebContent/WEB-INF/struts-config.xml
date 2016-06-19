@@ -1,46 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--   <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
-
+-->
 <struts-config>
+
+<controller nocache="true" />
+
 	<form-beans>
-		<form-bean name="loginForm" type="form.LoginForm" />
+		<!--  <form-bean name="loginForm" type="form.LoginForm" />-->
+		<form-bean name="loginForm" type="action.LoginValidation" />
 		<form-bean name="fareForm" type="form.FareForm" />
 		<form-bean name="exitForm" type="form.ExitForm" />	
 	</form-beans>	
 	<action-mappings>
-		<action name="loginForm" path="/Login" type="action.LoginAction"
-			scope="request" input="/login.jsp">
-			<forward name="failure" path="/login.jsp" redirect="true" />
-			<forward name="success" path="/elements/reservationPage.jsp"
-				redirect="true" />
+	
+		<action path="/elements/Tab" parameter="method" type="action.TabAction" nocache="true">
+            <forward name="reservationPage" path="reservationPage"/>
+            <forward name="customerPage" path="customerPage"/>
+            <forward name="fareFamilyPage" path="fareFamilyPage"/>
+            <forward name="failure" path="/index.jsp"/>
+        </action>
+        	<!--type="action.LoginValidation" type="action.LoginAction" -->
+		
+		<action name="loginForm" path="/Login"  validate="true"
+	              type="action.LoginAction"
+              	scope="request" input="/index.jsp" >
+			<forward name="failure" path="/index.jsp" 		redirect="true" />
+			<forward name="success" path="reservationPage"	redirect="true" />
 		</action>
+		<!--
+		<action name="start" path="/start" type="action.StartAction"
+			scope="request"  nocache="true">
+			<forward name="failure" path="/index.jsp" 		redirect="true" />
+			<forward name="success" path="/index.jsp"	redirect="true" />
+		</action>-->
+				
 		<action name="fareForm" path="/fareFamilyPage" type="actions.FareAction"
-			scope="request" input="/elements/fareFamilyPage.jsp" validate="false">
+			scope="request" input="/elements/fareFamilyPage.jsp" validate="false" nocache="true">
 			<forward name="fare" path="/elements/fareFamilyPage.jsp" />
 		</action>
+		
 		<action name="exitForm" path="/Exit" type="action.ExitAction"
-			scope="request">
+			scope="request" nocache="true">
 			<forward name="success" path="/index.jsp" redirect="true" />
 		</action>
+		
 		<action
-			path="/elements/Locale"
+			path="/locale/Locale"
 			type="action.LanguageAction"
 			parameter="method"
 			validate="false"
+			nocache="true"
 			>
-			<forward name="success" path="/elements/reservationPage.jsp" />
+			<forward name="success" path="reservationPage" redirect="true"/>
+			<forward name="failure" path="/index.jsp" redirect="true"/>
+			
 		</action>
 	</action-mappings>
 	
 	<message-resources parameter="resource" />
-	<!-- Validator
-	<plug-in className="org.apache.struts.validator.ValidatorPlugin"> 
-		<set-property property="pathnames" 
-		value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml"/> 
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
 </plug-in>
-	 -->
+	
+	<!-- Validator -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn"> 
+		<set-property property="pathnames" 
+		value="/validator-rules.xml, /validation.xml"/> 
+</plug-in>
+	
 </struts-config>
  

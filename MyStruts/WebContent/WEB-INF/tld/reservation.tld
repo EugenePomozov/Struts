@@ -12,6 +12,18 @@
 			tag.ReservationCodeTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>user</name>
+		<tagclass>
+			tag.UserName
+		</tagclass>
+		<bodycontent>empty</bodycontent>
 	</tag>
 	<tag>
 		<name>resDescr</name>
@@ -19,6 +31,11 @@
 			tag.ReservationDescriptionTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>
 	<tag>
 		<name>resComp</name>
@@ -26,6 +43,17 @@
 			tag.ComponentCodeTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		
+		<attribute>
+			<name>prop</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>
 	<tag>
 		<name>customer</name>
@@ -33,6 +61,16 @@
 			tag.CustomerTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>prop</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>
 	<tag>
 		<name>email</name>
@@ -40,6 +78,16 @@
 			tag.CustomerEmailTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>prop</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>
 	<tag>
 		<name>phone</name>
@@ -47,6 +95,16 @@
 			tag.CustomerPhoneTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>prop</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>
 	<tag>
 		<name>pays</name>
@@ -54,5 +112,15 @@
 			tag.CustomerPaymentsTag
 		</tagclass>
 		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>prop</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>source</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
 	</tag>	
 </taglib>

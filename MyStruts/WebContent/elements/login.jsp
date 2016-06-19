@@ -1,22 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>--%>
 <%@ taglib uri="/WEB-INF/tld/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic"%>
 <%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean"%>
-<!DOCTYPE html>
+<%--<!DOCTYPE html>--%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title><bean:message key="jsp.login.title" /></title>
 
 <link rel='stylesheet' href='styles/bootstrap.min.css' type='text/css'	media='all'>
 <link rel='stylesheet' href='styles/bootstrap.css' type='text/css'>
-<link rel='stylesheet' href='styles/main.css' type='text/css'>
+<link rel='stylesheet' href='styles/main.css' type='text/css'>--%>
 </head>
 <body>
 	<logic:messagesPresent>
-		<div class="alert alert-danger">
+		<div class="list alert alert-danger">
 			<html:errors />
 		</div>
 	</logic:messagesPresent>

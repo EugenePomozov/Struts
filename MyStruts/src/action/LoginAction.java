@@ -7,8 +7,11 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
 
 import beans.User;
 import factoties.UserFactory;
@@ -39,7 +42,8 @@ public class LoginAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        LoginForm loginForm = (LoginForm) form;
+       // LoginForm loginForm = (LoginForm) form;
+    	LoginValidation loginForm = (LoginValidation) form;
         IUserDAO userDAO = UserFactory.getClassFromFactory();
         User user = userDAO.getUser(loginForm.getUserName(), loginForm.getPassword());
       
@@ -47,7 +51,7 @@ public class LoginAction extends org.apache.struts.action.Action {
         	request.getSession().setAttribute("user", user);
             return mapping.findForward(SUCCESS);
         } else {
-            return mapping.findForward(FAILURE);
+        	return mapping.findForward(FAILURE);
         }
     }
 }

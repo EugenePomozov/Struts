@@ -38,4 +38,9 @@ public class MemoryUserImpl implements IUserDAO {
 		}
 		return null;
 	}
+
+	@Override
+	public boolean checkUserName(String login) {
+			return users.containsKey(login);
+	}
 }

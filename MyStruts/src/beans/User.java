@@ -27,4 +27,11 @@ public class User {
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}
+
+	@Override
+	public String toString() {
+		
+		return name!=null?name:"";
+	}
+	
 }

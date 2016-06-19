@@ -11,12 +11,26 @@ import beans.User;
 
 public class ComponentCodeTag extends TagSupport {
 	private static final long serialVersionUID = 1L;
+	
+	private String prop;		//components
+	private String source;		//user
+	
 
 	public int doStartTag() throws JspException {
-		User user = (User) pageContext.getAttribute("user",
+		User user = (User) pageContext.getAttribute(source,
 				PageContext.SESSION_SCOPE);
 		List<ReservationComponent> list = user.getReservation().getReservationComponents();
-		pageContext.getRequest().setAttribute("components", list);
+		pageContext.getRequest().setAttribute(prop, list);
 		return SKIP_BODY;
+	}
+
+
+	public void setProp(String prop) {
+		this.prop = prop;
+	}
+
+
+	public void setSource(String source) {
+		this.source = source;
 	}
 }

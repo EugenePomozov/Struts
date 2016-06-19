@@ -27,8 +27,10 @@ public class LoginFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpSession session = httpRequest.getSession();
 		User user = (User) session.getAttribute("user");
-		if (user == null) {
+		System.out.println("filter");
+		if (user == null ) {
 			session.invalidate();
+			System.out.println("filter ok");
 			HttpServletResponse httpResponse = (HttpServletResponse) response;
 			httpResponse.sendRedirect("../index.jsp");
 			return;

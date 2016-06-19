@@ -49,6 +49,30 @@
 <form-validation>
 
    <global>
+   
+   <validator	name="checkusername"
+				classname="validation.MyValidation"
+                method="checkUserName"		
+				methodParams="java.lang.Object,
+							org.apache.commons.validator.ValidatorAction,
+							org.apache.commons.validator.Field,
+							org.apache.struts.action.ActionMessages,
+							org.apache.commons.validator.Validator,
+                       		javax.servlet.http.HttpServletRequest" 
+                
+                msg="errors.required"/>
+
+	<validator	name="checkpassword"
+				classname="validation.MyValidation"
+                method="checkPassword"		
+				methodParams="java.lang.Object,
+							org.apache.commons.validator.ValidatorAction,
+							org.apache.commons.validator.Field,
+							org.apache.struts.action.ActionMessages,
+							org.apache.commons.validator.Validator,
+                       		javax.servlet.http.HttpServletRequest" 
+                
+                msg="errors.required"/>
 
       <validator name="required"
             classname="org.apache.struts.validator.FieldChecks"
@@ -59,6 +83,7 @@
                        org.apache.struts.action.ActionMessages,
                        org.apache.commons.validator.Validator,
                        javax.servlet.http.HttpServletRequest"
+                  depends=""
                   msg="errors.required"/>
 
       <validator name="requiredif"
