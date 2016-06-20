@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-
 <%@ taglib uri="/tags/struts-tiles" prefix="tiles"%>
 <%@ taglib uri="/WEB-INF/tld/struts-html.tld" prefix="html"%>
-<%@ taglib uri="/tags/c" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -3,20 +3,17 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>Struts</display-name>
+<display-name>Struts</display-name>
 	<filter>
 		<filter-name>LoginFilter</filter-name>
 		<filter-class>filter.LoginFilter</filter-class>
 	</filter>
+	
 	<filter-mapping>
 		<filter-name>LoginFilter</filter-name>
 		<url-pattern>/elements/*</url-pattern>
 	</filter-mapping>
-	<servlet>
-		<display-name>start</display-name>
-		<servlet-name>start</servlet-name>
-		<servlet-class>action.StartAction</servlet-class>
-	</servlet>
+	
 	<servlet>
 		<servlet-name>action</servlet-name>
 		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
@@ -36,10 +33,6 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
-	<servlet-mapping>
-		<servlet-name>start</servlet-name>
-		<url-pattern>/start</url-pattern>
-	</servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
@@ -49,20 +42,12 @@
 		<taglib>
 			<taglib-uri>/tags/reservation</taglib-uri>
 			<taglib-location>/WEB-INF/tld/reservation.tld</taglib-location>
-		
-  </taglib>
-  <taglib>
-    <taglib-uri>/tags/struts-tiles</taglib-uri>
-    <taglib-location>/WEB-INF/tld/struts-tiles.tld</taglib-location>
-  </taglib>
-  <taglib>
-    <taglib-uri>/tags/c</taglib-uri>
-    <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
-  </taglib>
-  <taglib>
-			<taglib-uri>/jstl/core</taglib-uri>
-			<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
 		</taglib>
+		
+ 		 <taglib>
+ 			<taglib-uri>/tags/struts-tiles</taglib-uri>
+			<taglib-location>/WEB-INF/tld/struts-tiles.tld</taglib-location>
+		</taglib>
+		
 	</jsp-config>
-
 </web-app>

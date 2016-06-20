@@ -1,16 +1,7 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>--%>
 <%@ taglib uri="/tags/reservation" prefix="reservation"%>
 <%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic"%>
 <%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean"%>
-<%--<!DOCTYPE html">--%>
-<html>
-<head>
-<%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><bean:message key="jsp.customer.title"/></title>--%>
-</head>
-<body>
-	<%--<%@ include file="tabs.jsp"%> --%>
+
 	<div>
 		<reservation:customer prop="customer" source="user" />
 		<h3><bean:message key="jsp.customer.customer"/></h3>
@@ -68,5 +59,3 @@
 			</tr>
 		</logic:iterate>
 	</table>
-</body>
-</html>

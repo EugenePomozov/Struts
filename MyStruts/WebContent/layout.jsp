@@ -8,10 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html:base />
-<title>
-<bean:message key="jsp.login.title" />
-<tiles:getAsString name="title" />
-</title>
+	<title>
+		<tiles:getAsString name="title" />
+	</title>
 <link rel='stylesheet' href='styles/bootstrap.min.css' type='text/css'
 	media='all'>
 <link rel='stylesheet' href='styles/bootstrap.css' type='text/css'>
